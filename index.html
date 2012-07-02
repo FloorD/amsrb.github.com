@@ -2,4 +2,75 @@
 layout: default
 ---
 
-<h1>Amsrb</h1>
+<section id="meetup">
+  <h1 class="tag">
+    <span class="tagleft"></span>
+    <span class="text">
+      <span>Next Meet-Up<span> Point</span></span>
+    </span>
+    <span class="tagright"></span>
+  </h1>
+  <div id="map">
+    <div id="company">
+      <h2>Drinks &amp; Laughs</h2>
+      <div class="date-loc">
+        <p class="date">July 17th, 2012</p>
+        <p class="loc">Location to be announced</p>
+      </div>
+      <div class="content">
+        <p>After the success of our "Amsterdam.rb Reboot" meet-up (80+ Rubyists attended!), our next monthly event will be about sharing drinks and laughs. We decided on meeting on <em>every third Tuesday of the month</em>, so on July 17th we'll meet in hopefully sunny Amsterdam at a to be announced location (we'll be testing a few shortly). Mark July 17th on your calendar as a "Save the Date" and we'll update you with details here and via <a href="http://twitter.com/amsrb">Twitter</a>.</p>
+      </div>
+    </div>
+    <div class="mapbox"><a href="http://maps.google.nl/maps?q=80beans,+vijzelstraat+72,+amsterdam&amp;hl=nl&amp;sll=52.469397,5.509644&amp;sspn=3.87879,3.779297&amp;hq=80beans,&amp;hnear=Vijzelstraat+72,+Binnenstad,+Amsterdam,+Noord-Holland&amp;t=m&amp;z=17"><img src="http://maps.googleapis.com/maps/api/staticmap?center=52.3629809,4.8917959&amp;zoom=11&amp;size=940x505&amp;sensor=false" alt="map" /></a></div>
+  </div>
+</section>
+
+<section id="news">
+  <h1>News:</h1>
+
+  #{{ site.categories.news.posts }}#
+
+  {% for post in site.categories.news.posts %}
+    <article>
+      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <footer>
+        <time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time>
+      </footer>
+      <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+    </article>
+  {% endfor %}
+
+</section>
+
+<section id="supporters">
+  <h1 class="tag">
+    <span class="tagleft"></span>
+    <span class="text">
+      <span><span>Our Awesome </span>Supporters</span>
+    </span>
+    <span class="tagright"></span>
+  </h1>
+  <ul>
+    <li>
+      <a href="http://www.80beans.com/"><div class="image_box">
+        <img src="/assets/images/logo/80beans.png" alt="80beans" />
+      </div>
+      </a>
+    </li>
+    <li>
+      <a href="http://travis-ci.org/"><div class="image_box">
+        <img src="/assets/images/logo/travis.png" alt="Travis CI" />
+      </div>
+      </a>
+    </li>
+    <li>
+      <a href="http://www.publitas.com/"><div class="image_box">
+        <img src="/assets/images/logo/publitas.png" alt="Publitas" />
+      </div>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:contact@amsrb.org"><div class="image_box">You?</div></a>
+    </li>
+  </ul>
+</section>
